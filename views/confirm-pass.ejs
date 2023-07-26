@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+
+
+<body>
+
+<%- include('includes/logo.ejs') %>
+
+
+
+<div class = "row text-center">
+    <div class = "col">
+        <h5>Please Choose a Password</h5><br>
+        <p class = "text-danger"><%= message%></p>
+        <form class="product-form" action="/admin/confirm-pass" method="POST">
+            <div>
+                <label for="password">create a password</label><br>
+                <input type="password" name="pwd1" id="pwd1" minlength = "2" maxlength="32" required><br>
+                <label for="password">confirm password</label><br>
+                <input type="password" name="pwd2" id="pwd2" minlength = "2" maxlength="32" required><br>
+            </div><br>
+
+            <button class="btn btn-primary" type="submit">register</button>
+
+            <p>already registered? go to <a href="http://localhost:3000">login</a> page</p>
+        </form>
+        <a href = "/admin/register"><button class="btn" >Back</button></a>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>

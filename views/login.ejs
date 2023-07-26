@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+
+<main>
+    <%- include('includes/logo.ejs') %>
+
+
+    <div class = "row text-center">
+        <h5>Please sign in</h5>
+        <br>
+        <p class="text-primary"><%= message%></p>
+        <p class="text-danger" id="session-end"></p>
+        <form class="product-form" action="/admin/logIn" method="POST">
+            <div>
+                <label for="email">enter your E-mail</label><br>
+                <input type="email" name="emailAddress" id="emailAddress" minlength="2" maxlength="32" required><br>
+                <label for="password">Enter your password</label><br>
+                <input type="password" name="password" id="password" minlength = "2" maxlength="32" required><br>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit" >Log-in</button>
+            <br>
+
+            <p>don't have an account yet? then <a href="/admin/register">register</a></p>
+
+        </form>
+    </div>
+</main>
+<%- include('includes/end.ejs') %>

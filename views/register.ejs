@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs') %>
+
+
+<body>
+
+<%- include('includes/logo.ejs') %>
+
+    <div class = "row text-center">
+        <div class = "col">
+            <h5>Please Register</h5><br>
+            <p class = "text-danger"><%= errorMsg%></p>
+            <form class="product-form" action="/admin/register" method="POST">
+                <div class="">
+
+                    <label for="email">enter your E-mail</label><br>
+                    <input type="email" name="email" id="email"  value = "<%= theUser[0]%>"minlength = "2" maxlength="32" required><br>
+                    <label for="fname">enter your first name</label><br>
+                    <input type="text" name="fname" id="fname"  value = "<%= theUser[1]%>" minlength = "2" maxlength="32" required><br>
+                    <label for="lname">enter your last name</label><br>
+                    <input type="text" name="lname" id="lname"  value = "<%= theUser[2]%>" minlength = "2" maxlength="32" required><br>
+                </div><br>
+
+                <button class="btn btn-primary" type="submit">NEXT</button>
+                <p>already registered? go to <a href="/">login</a> page</p>
+            </form>
+        </div>
+    </div>
+
+<%- include('includes/end.ejs') %>
